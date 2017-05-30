@@ -1,0 +1,12 @@
+/var/log/mylog_disk_usage.log {
+        daily
+        missingok
+        rotate 10
+        compress
+        delaycompress
+        notifempty
+	sharedscripts
+	postrotate
+             /bin/kill -HUP `cat /var/run/syslogd.pid 2> /dev/null` 2> /dev/null || true
+        endscript
+}

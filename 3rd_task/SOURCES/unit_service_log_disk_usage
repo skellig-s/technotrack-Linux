@@ -1,0 +1,10 @@
+[Unit]
+Description=Test service to log disk usage every 20 minutes
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/my_logger.sh
+
+[Install]
+WantedBy=multi-user.target
+
